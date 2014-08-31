@@ -7,6 +7,7 @@ my @commands;
 my $pointer;
 my @values;
 my $complete;
+
 my %definition = (
 	'>' => '$pointer++;',
 	'<' => '$pointer--;',
@@ -19,7 +20,7 @@ my %definition = (
 );
 
 foreach my $command (@source_code) {
-	$_ =~ s/[^><\+\-,\.\[\]]//g;
+	$command =~ s/[^><\+\-,\.\[\]]//g;
 	$initial .= $command;
 }
 
